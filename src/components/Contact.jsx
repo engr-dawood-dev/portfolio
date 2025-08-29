@@ -54,8 +54,8 @@ const Contact = () => {
         </motion.div>
 
         <div className="grid lg:grid-cols-2 gap-16">
-          {/* Contact Form */}
-          <motion.div
+          {/* Contact Form - COMMENTED OUT */}
+          {/* <motion.div
             initial={{ opacity: 0, x: -50 }}
             animate={inView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.8, delay: 0.2 }}
@@ -139,7 +139,6 @@ const Contact = () => {
               </button>
             </form>
 
-            {/* Success Message (Hidden by default) */}
             <motion.div
               initial={{ opacity: 0, scale: 0.8 }}
               className="hidden mt-6 p-4 bg-green-50 border border-green-200 rounded-lg"
@@ -151,41 +150,39 @@ const Contact = () => {
                 </span>
               </div>
             </motion.div>
-          </motion.div>
+          </motion.div> */}
 
-          {/* Contact Information */}
+          {/* Contact Information - Now Full Width */}
           <motion.div
-            initial={{ opacity: 0, x: 50 }}
+            initial={{ opacity: 0, x: 0 }}
             animate={inView ? { opacity: 1, x: 0 } : {}}
-            transition={{ duration: 0.8, delay: 0.4 }}
-            className="space-y-8"
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="lg:col-span-2 space-y-8"
           >
-            <div>
+            <div className="text-center">
               <h3 className="text-2xl font-bold text-gray-900 mb-6">Get in Touch</h3>
-              <p className="text-gray-600 leading-relaxed mb-8">
+              <p className="text-gray-600 leading-relaxed mb-8 max-w-2xl mx-auto">
                 I'm always excited to hear about new projects and opportunities. Whether you have a 
                 specific project in mind or just want to chat about possibilities, feel free to reach out.
               </p>
             </div>
 
             {/* Contact Details */}
-            <div className="space-y-6">
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
               {contactInfo.map((info, index) => (
                 <motion.div
                   key={info.title}
                   initial={{ opacity: 0, y: 20 }}
                   animate={inView ? { opacity: 1, y: 0 } : {}}
-                  transition={{ duration: 0.6, delay: 0.6 + index * 0.1 }}
-                  className="flex items-start space-x-4 p-4 bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300"
+                  transition={{ duration: 0.6, delay: 0.4 + index * 0.1 }}
+                  className="flex flex-col items-center text-center p-6 bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300"
                 >
-                  <div className="w-12 h-12 bg-gradient-to-br from-primary-500 to-secondary-500 rounded-lg flex items-center justify-center flex-shrink-0">
-                    <info.icon className="w-6 h-6 text-white" />
+                  <div className="w-16 h-16 bg-gradient-to-br from-primary-500 to-secondary-500 rounded-lg flex items-center justify-center mb-4">
+                    <info.icon className="w-8 h-8 text-white" />
                   </div>
-                  <div>
-                    <h4 className="font-semibold text-gray-900 mb-1">{info.title}</h4>
-                    <p className="text-primary-600 font-medium mb-1">{info.value}</p>
-                    <p className="text-sm text-gray-600">{info.description}</p>
-                  </div>
+                  <h4 className="font-semibold text-gray-900 mb-2">{info.title}</h4>
+                  <p className="text-primary-600 font-medium mb-2">{info.value}</p>
+                  <p className="text-sm text-gray-600">{info.description}</p>
                 </motion.div>
               ))}
             </div>
@@ -194,16 +191,16 @@ const Contact = () => {
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.6, delay: 1 }}
-              className="bg-gradient-to-r from-primary-600 to-secondary-600 rounded-2xl p-6 text-white"
+              transition={{ duration: 0.6, delay: 0.8 }}
+              className="bg-gradient-to-r from-primary-600 to-secondary-600 rounded-2xl p-8 text-white text-center max-w-4xl mx-auto"
             >
-              <div className="flex items-center space-x-3 mb-4">
-                <MessageCircle className="w-6 h-6" />
-                <h4 className="text-xl font-bold">Quick Response</h4>
+              <div className="flex items-center justify-center space-x-3 mb-4">
+                <MessageCircle className="w-8 h-8" />
+                <h4 className="text-2xl font-bold">Quick Response</h4>
               </div>
-              <p className="text-primary-100">
+              <p className="text-primary-100 text-lg">
                 I typically respond to all inquiries within 12 hours. For urgent matters, 
-                feel free to call me directly.
+                feel free to call me directly or use the WhatsApp button above.
               </p>
             </motion.div>
           </motion.div>

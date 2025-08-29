@@ -62,10 +62,10 @@ const Services = () => {
       color: 'from-red-500 to-red-600'
     },
     {
-      icon: Zap,
-      title: 'Performance Optimization',
-      description: 'Speed optimization and performance improvements to ensure your applications load quickly and provide excellent user experience.',
-      features: ['Core Web Vitals', 'Image Optimization', 'Caching Strategy', 'CDN Setup'],
+      icon: Palette,
+      title: 'UI/UX Services',
+      description: 'User-centered design solutions that create intuitive, engaging, and conversion-optimized user experiences across all platforms.',
+      features: ['User Research', 'Wireframing & Prototyping', 'Visual Design', 'Usability Testing'],
       color: 'from-indigo-500 to-indigo-600'
     }
   ];
